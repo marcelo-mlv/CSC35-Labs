@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 
     memset(&channel, 0, sizeof(channel));  /* inicializa estrutura */
     channel.sin_family = AF_INET;          /* IPv4 */
-    memcpy(&channel.sin_addr.s_addr, h->h_addr, h->h_length); /* copia IP do servidor */
+    memcpy(&channel.sin_addr.s_addr, h->h_addr_list[0], h->h_length); /* copia IP do servidor */
     channel.sin_port = htons(SERVER_PORT); /* define porta do servidor */
 
     c = connect(s, (struct sockaddr *)&channel, sizeof(channel)); /* inicia conexão */

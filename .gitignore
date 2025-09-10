@@ -1,0 +1,35 @@
+*.pdf
+
+# Compilados
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+*.out
+*.a
+*.lib
+*.dylib
+
+# Diretórios de build
+build/
+cmake-build*/
+Debug/
+Release/
+
+# Arquivos temporários
+*~
+*.swp
+*.tmp
+*.log
+*.bak
+.DS_Store
+*.sublime-workspace
+*.sublime-project
+
+# Arquivos de dependência
+*.d
+
+# Arquivos de core dump
+core
+core.*

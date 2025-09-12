@@ -1,6 +1,6 @@
+
 *.pdf
 .vscode
-[!.]*
 
 # Compilados
 *.o

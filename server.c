@@ -5,10 +5,21 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
-#define SERVER_PORT 12345       /* arbitrário, mas cliente e servidor devem combinar */
+#define SERVER_PORT 10002       /* arbitrário, mas cliente e servidor devem combinar */
 #define BUF_SIZE 4096           /* tamanho do bloco de transferência */
 #define QUEUE_SIZE 10           /* tamanho da fila */
+
+void fatal(char *string)
+{
+    printf("%s\n", string);
+    exit(1);
+}
+
 
 int main(int argc, char *argv[])
 {
@@ -53,4 +64,3 @@ int main(int argc, char *argv[])
         close(sa); /* fecha conexão */
     }
 }
- 

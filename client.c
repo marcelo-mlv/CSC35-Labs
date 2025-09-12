@@ -5,21 +5,24 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
-
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 #include <unistd.h>
 
-void fatal(char *string) {
+#define SERVER_PORT 10002       /* arbitrário, mas cliente e servidor devem combinar */
+#define BUF_SIZE 4096           /* tamanho do bloco de transferência */
+
+void fatal(char *string)
+{
     printf("%s\n", string);
     exit(1);
 }
 
-#define SERVER_PORT 12345       /* arbitrário, mas cliente e servidor devem combinar */
-#define BUF_SIZE 4096           /* tamanho do bloco de transferência */
 
-int main(int argc, char **argv) {
+
+int main(int argc, char **argv)
+{
     int c, s, bytes;
     char buf[BUF_SIZE];         /* buffer para arquivo de entrada */
     struct hostent *h;          /* informações sobre servidor */
@@ -50,3 +53,4 @@ int main(int argc, char **argv) {
         write(1, buf, bytes);             /* escreve na saída padrão */
     }
 }
+
